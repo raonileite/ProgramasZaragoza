@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55c3b183-fe7f-47f4-af92-295945c9d118">
+	<property name="com.jaspersoft.studio.data.sql.tables"></property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_lojas.pk_loj_id,
+	tbl_lojas.loj_sigla,
+	tbl_lojas.loj_cidade
+FROM tbl_lojas]]>
+	</queryString>
+	<field name="pk_loj_id" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="pk_loj_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+	</field>
+	<field name="loj_sigla" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="loj_sigla"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+	</field>
+	<field name="loj_cidade" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="loj_cidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="59" y="0" width="100" height="30" uuid="bb7c2a0a-20d3-4aec-b2f0-e43db02ecd22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22586993-3a56-4e13-90f4-c4c1b131d699"/>
+				</reportElement>
+				<text><![CDATA[pk_loj_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="0" width="100" height="30" uuid="6673c27a-4a94-4cba-b961-bffa7c51e3a3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9301675c-d175-4f37-bc68-872047dd7fad"/>
+				</reportElement>
+				<text><![CDATA[loj_sigla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="30" uuid="8f5d4b4d-c2dd-4f3d-a248-82d453b0d343">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="33eb8b00-5942-4395-ba7f-e161a66c1cf3"/>
+				</reportElement>
+				<text><![CDATA[loj_cidade]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="0" width="100" height="30" uuid="25bb6a3c-1850-4bf0-ac4c-9cda43b40b44">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22586993-3a56-4e13-90f4-c4c1b131d699"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pk_loj_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="100" height="30" uuid="7b1f4a93-a0a7-4c3b-9303-212f2ff51643">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9301675c-d175-4f37-bc68-872047dd7fad"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{loj_sigla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="70cd7945-7773-4624-bb84-6f9f6ecf25a1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="33eb8b00-5942-4395-ba7f-e161a66c1cf3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{loj_cidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

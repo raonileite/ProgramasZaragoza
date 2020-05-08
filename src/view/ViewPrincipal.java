@@ -36,6 +36,22 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }
 public void Login(String login) {
 jLabel1.setText(login);
+String admin = login;
+boolean condicao = false;
+if(admin.equals("admin")){
+    condicao = true;
+    } else {
+    condicao = false;
+}
+jbUsuarios.setEnabled(condicao);
+jbLojas.setEnabled(condicao);
+jbFornecedores.setEnabled(condicao);
+jbFormaPagamento.setEnabled(condicao);
+jmLojas.setEnabled(condicao);
+jmUsuarios.setEnabled(condicao);
+jmForma.setEnabled(condicao);
+jmFornecedores.setEnabled(condicao);
+
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,6 +92,7 @@ jLabel1.setText(login);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jbUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/botoes/icons8-usuário-verificado-masculino-64.png"))); // NOI18N
         jbUsuarios.setText("Usuários");
@@ -122,13 +139,14 @@ jLabel1.setText(login);
         });
         jPanel2.add(jbSP);
 
-        uJPanelImagem1.setImagem(new java.io.File("C:\\Users\\ti.raoni\\Documents\\NetBeansProjects\\ProgramasZaragoza\\src\\imagens\\fundo\\6-espaco-do-colaborador.jpg"));
+        uJPanelImagem1.setImagem(new java.io.File("C:\\TEMP\\spzaragoza\\imagens\\fundo_principal.jpg"));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setText("Quem está logado");
 
-        jLabel2.setText("Você está logado como:");
+        jLabel2.setText("Usuário:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -159,7 +177,7 @@ jLabel1.setText(login);
         uJPanelImagem1Layout.setVerticalGroup(
             uJPanelImagem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(uJPanelImagem1Layout.createSequentialGroup()
-                .addContainerGap(555, Short.MAX_VALUE)
+                .addContainerGap(547, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -359,7 +377,7 @@ jLabel1.setText(login);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void habilitarDesabilitarCampos (boolean condicao) throws IOException{
-        jMenuBar1.setEnabled(condicao);
+        jbUsuarios.setEnabled(condicao);
         
     }
     /**

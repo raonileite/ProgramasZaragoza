@@ -8,6 +8,34 @@ import java.sql.Date;
 */
 public class ModelSolicitacaoPagamento {
 
+    /**
+     * @return the spFornecedor
+     */
+    public String getSpFornecedor() {
+        return spFornecedor;
+    }
+
+    /**
+     * @param spFornecedor the spFornecedor to set
+     */
+    public void setSpFornecedor(String spFornecedor) {
+        this.spFornecedor = spFornecedor;
+    }
+
+    /**
+     * @return the spForma
+     */
+    public String getSpForma() {
+        return spForma;
+    }
+
+    /**
+     * @param spForma the spForma to set
+     */
+    public void setSpForma(String spForma) {
+        this.spForma = spForma;
+    }
+
     private int idSP;//
     private int idLoja;
     private int idFornecedor;//
@@ -18,6 +46,8 @@ public class ModelSolicitacaoPagamento {
     private Date spData;//
     private int idUsuario;
     private int spNota;//
+    private String spFornecedor;
+    private String spForma;
 
     /**
     * Construtor

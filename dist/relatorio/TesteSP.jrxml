@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="500" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d964b3f-490b-490b-bcc0-1e5de1e1be88">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="706"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="284"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MeuAdaptadorSQLite"/>
+	<subDataset name="Dataset1" uuid="a5ff33fd-166c-4fde-b6e7-cd7f707cee87">
+		<property name="com.jaspersoft.studio.data.sql.tables"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MeuAdaptadorSQLite"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT 
+FROM tbl_lojas a
+	left join tbl_sp_loj b ON 
+	 a.pk_loj_id = b.fk_loj_id 
+WHERE 
+	 b.fk_sp_id = 17]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="92bdd46f-89c6-4cf7-8464-165021c04680">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MeuAdaptadorSQLite"/>
+		<queryString language="SQL">
+			<![CDATA[select a.pk_loj_id, a.loj_sigla from tbl_lojas a left join tbl_sp_loj b on a.pk_loj_id = b.fk_loj_id where b.fk_sp_id = "17"]]>
+		</queryString>
+		<field name="pk_loj_id" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="pk_loj_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+		<field name="loj_sigla" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="loj_sigla"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset3" uuid="37927fa2-10f2-4655-bf30-d59d9ea6e375">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MeuAdaptadorSQLite"/>
+		<queryString language="SQL">
+			<![CDATA[select a.pk_loj_id, a.loj_sigla from tbl_lojas a left join tbl_sp_loj b on a.pk_loj_id = b.fk_loj_id where b.fk_sp_id = "17"]]>
+		</queryString>
+		<field name="pk_loj_id" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="pk_loj_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+		<field name="loj_sigla" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="loj_sigla"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset4" uuid="32edf89d-5883-4153-aaee-17a4e36c1eaf">
+		<property name="com.jaspersoft.studio.data.sql.tables"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MeuAdaptadorSQLite"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT tbl_lojas.loj_sigla,
+	tbl_lojas.pk_loj_id
+FROM tbl_lojas
+	INNER JOIN tbl_sp_loj ON 
+	 tbl_sp_loj.fk_loj_id = tbl_lojas.pk_loj_id 
+	INNER JOIN tbl_solicitacaopagamento ON 
+	 tbl_solicitacaopagamento.pk_sp_id = tbl_sp_loj.fk_sp_id]]>
+		</queryString>
+		<field name="loj_sigla" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="loj_sigla"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+		<field name="pk_loj_id" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="pk_loj_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+	</subDataset>
+	<subDataset name="ListaLoja" uuid="01f7e286-0385-4b38-be50-88b859ea39a4">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MeuAdaptadorSQLite"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT tbl_lojas.loj_sigla,
+	tbl_lojas.pk_loj_id
+FROM tbl_solicitacaopagamento
+	INNER JOIN tbl_sp_loj ON 
+	 tbl_sp_loj.fk_sp_id = tbl_solicitacaopagamento.pk_sp_id 
+	INNER JOIN tbl_lojas ON 
+	 tbl_lojas.pk_loj_id = tbl_sp_loj.fk_loj_id 
+WHERE 
+	 tbl_solicitacaopagamento.pk_sp_id = 17]]>
+		</queryString>
+		<field name="loj_sigla" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="loj_sigla"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+		<field name="pk_loj_id" class="java.lang.Object">
+			<property name="com.jaspersoft.studio.field.label" value="pk_loj_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+		</field>
+	</subDataset>
+	<parameter name="SP_ID" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_solicitacaopagamento.pk_sp_id,
+	tbl_solicitacaopagamento.sp_historico,
+	tbl_solicitacaopagamento.sp_observacoes,
+	tbl_solicitacaopagamento.sp_valor,
+	tbl_solicitacaopagamento.sp_data,
+	tbl_solicitacaopagamento.sp_nota,
+	tbl_formpagamento.pag_forma,
+	tbl_fornecedor.for_nome,
+	tbl_lojas.loj_sigla,
+	tbl_lojas.pk_loj_id
+FROM tbl_solicitacaopagamento
+	INNER JOIN tbl_formpagamento ON 
+	 tbl_formpagamento.pk_pag_id = tbl_solicitacaopagamento.fk_pag_id 
+	INNER JOIN tbl_fornecedor ON 
+	 tbl_fornecedor.pk_for_id = tbl_solicitacaopagamento.fk_for_id 
+	INNER JOIN tbl_lojas ON 
+	 tbl_lojas.pk_loj_id = tbl_sp_loj.fk_loj_id 
+	INNER JOIN tbl_sp_loj ON 
+	 tbl_sp_loj.fk_sp_id = tbl_solicitacaopagamento.pk_sp_id 
+	 where
+ tbl_solicitacaopagamento.pk_sp_id = $P{SP_ID}]]>
+	</queryString>
+	<field name="pk_sp_id" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="pk_sp_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_solicitacaopagamento"/>
+	</field>
+	<field name="sp_historico" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="sp_historico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_solicitacaopagamento"/>
+	</field>
+	<field name="sp_observacoes" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="sp_observacoes"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_solicitacaopagamento"/>
+	</field>
+	<field name="sp_valor" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="sp_valor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_solicitacaopagamento"/>
+	</field>
+	<field name="sp_data" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="sp_data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_solicitacaopagamento"/>
+	</field>
+	<field name="sp_nota" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="sp_nota"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_solicitacaopagamento"/>
+	</field>
+	<field name="pag_forma" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="pag_forma"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_formpagamento"/>
+	</field>
+	<field name="for_nome" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="for_nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_fornecedor"/>
+	</field>
+	<field name="loj_sigla" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="loj_sigla"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+	</field>
+	<field name="pk_loj_id" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="pk_loj_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_lojas"/>
+	</field>
+	<pageHeader>
+		<band height="36">
+			<rectangle>
+				<reportElement x="-21" y="9" width="51" height="21" backcolor="#E1E9F5" uuid="4b2cbea0-1390-4967-8f2d-68e40319f920"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="30" y="9" width="80" height="21" uuid="23894ddf-8c5b-4ed5-ac4d-030d9d11a242"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-21" y="-20" width="594" height="29" backcolor="#1B57AB" uuid="565529ad-15fc-495e-adb4-44158152c50b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-13" y="11" width="39" height="19" uuid="0ed7d89f-24f3-4434-91ef-10b03b33d850"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Venc.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="36" y="11" width="72" height="20" uuid="67aaf55c-4e56-4bba-b2ce-6370e3157609"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sp_data}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="420" y="9" width="153" height="21" uuid="92a12629-a2b5-4657-a4a0-546a0d578966"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-12" y="-15" width="240" height="20" forecolor="#FFFFFF" uuid="21763eb8-1ccd-4f77-b3f0-6b9367f89cdd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLICITAÇÃO DE PAGAMENTO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="180" y="9" width="171" height="21" uuid="752b9fec-5f9d-4dbf-b2f4-69896aa19734"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="110" y="9" width="71" height="21" backcolor="#E1E9F5" uuid="e3b7a1de-0b02-4f66-aa81-fc64425a68fc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="350" y="9" width="71" height="21" backcolor="#E1E9F5" uuid="aac36e1b-1b20-4b59-aef1-68a9baeefc99"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="121" y="11" width="48" height="20" uuid="f30b5de0-7269-46c2-a19f-7b9b794f7b7e"/>
+				<text><![CDATA[Grupo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="11" width="48" height="20" uuid="3e47e8c8-510a-4291-88a3-09bbf6c243bf"/>
+				<text><![CDATA[Conta:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<property name="com.jaspersoft.studio.layout"/>
+			<textField>
+				<reportElement x="10" y="0" width="100" height="20" uuid="286f565a-a0af-4ca4-b79c-93e4358948a9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacingSize="0.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{loj_sigla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-10" y="0" width="20" height="20" uuid="62c54f49-b0de-4b59-8a16-959b4af1ad68"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="0.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pk_loj_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="204">
+			<rectangle>
+				<reportElement x="-21" y="25" width="101" height="41" uuid="0586d43e-7053-414c-b525-070a377870b6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-21" y="1" width="101" height="24" backcolor="#E1E9F5" uuid="b53bba3a-e089-4447-ad03-ab8f8437a67c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-10" y="5" width="79" height="20" uuid="d2791b5f-2c9d-4998-bf63-ce8b9edfb4d7"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Documento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-21" y="30" width="100" height="20" uuid="021f21d8-8e8a-42bb-bdc5-b698a02a15a6"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sp_nota}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="79" y="25" width="170" height="41" uuid="d9b151f2-e954-45ca-a5b6-40ed47235f39"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="79" y="1" width="170" height="24" backcolor="#E1E9F5" uuid="41ba5d35-a24c-4dd1-ad5d-c732dae01c65"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="114" y="6" width="100" height="19" uuid="4099cd03-5a50-422d-9844-e1fff537c317"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fornecedor:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="249" y="25" width="251" height="41" uuid="4f632391-e7e6-4666-b737-4d32851e184f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="249" y="1" width="251" height="24" backcolor="#E1E9F5" uuid="32cb5377-c80e-4e73-81a0-5a51559ddf72"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="499" y="25" width="75" height="41" uuid="4d8523ab-5185-4d06-bbaf-cecef118a725"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="499" y="1" width="75" height="24" backcolor="#E1E9F5" uuid="9bd86ddc-a223-4078-af53-6adf40d5d25b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="500" y="30" width="70" height="30" uuid="b82e9b84-2c00-4841-b72a-9848970a0413"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sp_valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="510" y="5" width="51" height="20" uuid="365000ef-7680-4828-b84a-eecb9ff7b7e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="30" width="239" height="36" uuid="7716a5b4-e1c5-4af4-8d3f-673b2b6e731f"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sp_historico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="329" y="7" width="68" height="18" uuid="b5e8de3f-1155-432f-8d6a-de3ecb6d980b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Histórico:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-21" y="66" width="595" height="24" uuid="fc418e40-2d1f-414f-99c0-26e7332ee4a1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-21" y="66" width="170" height="24" backcolor="#E1E9F5" uuid="b4d2c967-5843-4b68-b111-dc662ae37555"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-16" y="66" width="160" height="24" uuid="ddfe475e-7185-4dd4-b7e1-acf2f0434184"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Forma de Pagamento:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-21" y="90" width="595" height="40" uuid="db604890-c7ca-4a08-af92-3db84af7f5b9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-21" y="90" width="170" height="40" backcolor="#E1E9F5" uuid="853a8215-6a9c-4027-b398-2518d941a611"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-17" y="91" width="167" height="19" uuid="c8f8a2cc-7bd2-4e40-b807-bd16e85f5f3f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Observações Importantes:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="98" width="417" height="32" uuid="70e88e4c-2078-4e32-b5a4-77d25bb5c8df"/>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sp_observacoes}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="120" y="130" width="140" height="71" uuid="609dca09-9c62-4a17-8890-1a3f7bf6f6d0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-21" y="130" width="142" height="71" uuid="816293f3-8c0c-485f-8ada-80790ebe8492"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="260" y="130" width="108" height="71" uuid="6a7c0b11-6f83-4b68-9184-85e714d6d530"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="468" y="130" width="106" height="71" uuid="d35e410c-752e-4582-bdc4-ecab4ce6abe2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="368" y="130" width="100" height="71" uuid="5e0a79be-8c12-46a8-8bcd-f201f88e9f18"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-14" y="131" width="40" height="14" uuid="7c8906d3-1132-4752-b33e-e6ffa7e25c2e"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="132" width="40" height="14" uuid="ce957289-f609-41cf-a187-a3acdf16a02d"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="504" y="132" width="40" height="14" uuid="7db603ad-431b-4be9-ba77-e298835338b3"/>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="185" width="79" height="16" uuid="d2305331-c537-4e87-9aaf-ac40ae0a496a"/>
+				<text><![CDATA[Solicitante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="187" width="81" height="13" uuid="f8c386de-6af9-4124-9308-eb7ccaf10d3e"/>
+				<text><![CDATA[Aprovação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="169" width="100" height="15" uuid="2371389b-6fc5-4487-a418-ffec1cca679c"/>
+				<text><![CDATA[SP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="168" width="74" height="16" uuid="5bc0cda5-577e-49e9-a79e-044061a88904"/>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="260" y="130" width="109" height="35" uuid="6d1a25d9-b82d-4e1e-baaa-6e257fa3709b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="263" y="134" width="100" height="13" uuid="008a018a-2c77-4fad-a8fb-bc992233f009"/>
+				<text><![CDATA[Nat. Operação:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="368" y="130" width="100" height="35" uuid="139146ad-0b1c-4b1b-bb1c-9c01608b02a0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="371" y="134" width="100" height="17" uuid="8c90a98c-c5d9-4ceb-b2e4-d354a5f060ee"/>
+				<text><![CDATA[Histórico:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="71" width="100" height="17" uuid="29f22f72-83e2-48e5-b071-28b76ff48fcc"/>
+				<textFieldExpression><![CDATA[$F{pag_forma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="30" width="100" height="30" uuid="e3984595-16ce-4ca1-87b3-928558e625a9"/>
+				<textFieldExpression><![CDATA[$F{for_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

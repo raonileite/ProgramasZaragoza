@@ -701,8 +701,8 @@ public class ViewSP extends javax.swing.JInternalFrame {
                 listaModelSolicitacaoPagamento.get(i).getIdSP(),
                 listaModelSolicitacaoPagamento.get(i).getSpNota(),
                 //listaModelSolicitacaoPagamento.get(i).getSpData(),
-                listaModelSolicitacaoPagamento.get(i).getIdFornecedor(),
-                listaModelSolicitacaoPagamento.get(i).getIdForma(),
+                listaModelSolicitacaoPagamento.get(i).getSpFornecedor(),
+                listaModelSolicitacaoPagamento.get(i).getSpForma(),
                 listaModelSolicitacaoPagamento.get(i).getSpValor()
             });
         }
@@ -718,8 +718,8 @@ public class ViewSP extends javax.swing.JInternalFrame {
                 listaModelSolicitacaoPagamento.get(i).getIdSP(),
                 listaModelSolicitacaoPagamento.get(i).getSpNota(),
                 //listaModelSolicitacaoPagamento.get(i).getSpData(),
-                listaModelSolicitacaoPagamento.get(i).getIdFornecedor(),
-                listaModelSolicitacaoPagamento.get(i).getIdForma(),
+                listaModelSolicitacaoPagamento.get(i).getSpFornecedor(),
+                listaModelSolicitacaoPagamento.get(i).getSpForma(),
                 listaModelSolicitacaoPagamento.get(i).getSpValor()
             });
         }

@@ -56,7 +56,7 @@ public class ControllerRelatorioLoja extends ConexaoSQLite {
     }
 
     public void relatorioSP(int pk) throws JRException, SQLException, FileNotFoundException, IOException{
-       String rel = "relatorio/TesteSP.jasper";
+       String rel = "relatorio/RelatorioSP.jasper";
         System.out.println(pk);
         HashMap<String,Object> param = new HashMap<String,Object>();
         param.put("SP_ID",pk);

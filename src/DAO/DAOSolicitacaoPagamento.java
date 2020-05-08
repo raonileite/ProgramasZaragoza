@@ -113,7 +113,7 @@ public class DAOSolicitacaoPagamento extends ConexaoSQLite {
     /**
     * recupera uma lista de SolicitacaoPagamento
         * @return ArrayList
-    */
+    
     public ArrayList<ModelSolicitacaoPagamento> getListaSolicitacaoPagamentoDAO(){
         ArrayList<ModelSolicitacaoPagamento> listamodelSolicitacaoPagamento = new ArrayList();
         ModelSolicitacaoPagamento modelSolicitacaoPagamento = new ModelSolicitacaoPagamento();
@@ -164,13 +164,12 @@ public class DAOSolicitacaoPagamento extends ConexaoSQLite {
     * @param pModelSolicitacaoPagamento
     * @return boolean
     */
-  /*  public ArrayList<ModelSolicitacaoPagamento> getListaSolicitacaoPagamentoDAO(){
+    public ArrayList<ModelSolicitacaoPagamento> getListaSolicitacaoPagamentoDAO(){
         ArrayList<ModelSolicitacaoPagamento> listamodelSolicitacaoPagamento = new ArrayList();
         ModelSolicitacaoPagamento modelSolicitacaoPagamento = new ModelSolicitacaoPagamento();
         try {
             this.conectar();
-            String sql =
-                    "SELECT "
+            String sql = "SELECT "
                     + "tbl_solicitacaopagamento.pk_sp_id,"
                     + "tbl_solicitacaopagamento.sp_historico,"
                     + "tbl_solicitacaopagamento.sp_observacoes,"
@@ -178,15 +177,13 @@ public class DAOSolicitacaoPagamento extends ConexaoSQLite {
                     + "tbl_solicitacaopagamento.sp_data,"
                     + "tbl_solicitacaopagamento.sp_nota,"
                     + "tbl_formpagamento.pag_forma,"
-                    + "tbl_fornecedor.for_nome"
+                    + "tbl_fornecedor.for_nome "
                     + "FROM "
-                    + "tbl_solicitacaopagamento"
-                    + "INNER JOIN tbl_formpagamento ON "
-                    + "tbl_formpagamento.pk_pag_id = tbl_solicitacaopagamento.fk_pag_id "
-                    + "INNER JOIN tbl_fornecedor ON "
-                    + "tbl_fornecedor.pk_for_id = tbl_solicitacaopagamento.fk_for_id "
-                    + ";"
-            ;
+                    + "tbl_solicitacaopagamento "
+                    + "INNER JOIN tbl_formpagamento "
+                    + "ON tbl_formpagamento.pk_pag_id = tbl_solicitacaopagamento.fk_pag_id "
+                    + "INNER JOIN tbl_fornecedor "
+                    + "ON tbl_fornecedor.pk_for_id = tbl_solicitacaopagamento.fk_for_id";
             PreparedStatement preparedStatement = criarPreparedStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
@@ -197,8 +194,8 @@ public class DAOSolicitacaoPagamento extends ConexaoSQLite {
                 modelSolicitacaoPagamento.setSpValor(rs.getDouble(4));
                 //modelSolicitacaoPagamento.setSpData(rs.getDate(5));
                 modelSolicitacaoPagamento.setSpNota(rs.getInt(6));
-                modelSolicitacaoPagamento.setIdForma(rs.getInt(7));
-                modelSolicitacaoPagamento.setIdFornecedor(rs.getInt(8));
+                modelSolicitacaoPagamento.setSpForma(rs.getString(7));
+                modelSolicitacaoPagamento.setSpFornecedor(rs.getString(8));
                 
                 listamodelSolicitacaoPagamento.add(modelSolicitacaoPagamento);
             }
@@ -208,7 +205,7 @@ public class DAOSolicitacaoPagamento extends ConexaoSQLite {
             desconectar();
         }
         return listamodelSolicitacaoPagamento;
-    }*/
+    }
     public boolean atualizarSolicitacaoPagamentoDAO(ModelSolicitacaoPagamento pModelSolicitacaoPagamento){
         try {
             this.conectar();
